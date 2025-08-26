@@ -2,168 +2,184 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.util.Scanner;
 public class Main {
-
     public static void main(String[] args) {
-        boolean b = false;
         Scanner sc = new Scanner(System.in);
-        System.out.println("-----Seja bem vindo!------");
-        System.out.println("Digite os dados requisitados para obter os resultados dos seus indicadores");
-        while (true) {
-            System.out.println("Digite o mês");
-            String mes = sc.nextLine();
-            if (mes == "sair") {
-                System.out.println("Programa encerrado!");
-                break;
+        int excellent = 0;
+        int good = 0;
+        int neutral = 0;
+        int bad = 0;
+        int terrible = 0;
+        int sumJanuary = 0;
+        int sumFebruary = 0;
+        int sumMarch = 0;
+        int sumApril = 0;
+        int sumMay = 0;
+        int sumJune = 0;
+        int sumJuly = 0;
+        int contador = 0;
+        int nextSesion;
+        boolean b = false;
+
+        do {
+            contador++;
+            System.out.println("=== Enter the month ====");
+            System.out.println("=== 1 - January ====");
+            System.out.println("=== 2 - February ====");
+            System.out.println("=== 3 - March ====");
+            System.out.println("=== 4- April ====");
+            System.out.println("=== 5 - May ====");
+            System.out.println("=== 6 - June ====");
+            System.out.println("=== 7 - July ====");
+            System.out.println("=== 8 - Next session ====");
+            System.out.println("=== 9 - Close program ====");
+
+            System.out.println("If you want to next session for calculate yours indicators type (Next) ");
+
+            int month = sc.nextInt();
+            switch (month) {
+                case 1:
+                    System.out.println("===JANUARY===");
+                    System.out.println("Type number of excellent reviews: ");
+                    excellent = sc.nextInt();
+                    System.out.println("Type number of goods reviews: ");
+                    good = sc.nextInt();
+                    System.out.println("Type number of neutrals reviews: ");
+                    neutral = sc.nextInt();
+                    System.out.println("Type number of bads reviews: ");
+                    bad = sc.nextInt();
+                    System.out.println("Type number of terrible reviews: ");
+                    terrible = sc.nextInt();
+                    sc.nextLine();
+                    sumJanuary = excellent + good + neutral + bad + terrible;
+                    System.out.println("The total of number surveys answered this month was: " + sumJanuary);
+                    System.out.println("If you want to next session for calculate yours indicators type 1 ");
+                    continue;
+
+
+                case 2:
+                    System.out.println("===FEBRUARY===");
+                    System.out.println("Type number of excellent reviews: ");
+                    excellent = sc.nextInt();
+                    System.out.println("Type number of goods reviews: ");
+                    good = sc.nextInt();
+                    System.out.println("Type number of neutrals reviews: ");
+                    neutral = sc.nextInt();
+                    System.out.println("Type number of bads reviews: ");
+                    bad = sc.nextInt();
+                    System.out.println("Type number of terrible reviews: ");
+                    terrible = sc.nextInt();
+                    sc.nextLine();
+
+                    sumFebruary = excellent + good + neutral + bad + terrible;
+                    System.out.println("The total of number surveys answered this month was: " + sumFebruary);
+                    break;
+                case 3:
+                    System.out.println("===MARCH===");
+                    System.out.println("Type number of excellent reviews: ");
+                    excellent = sc.nextInt();
+                    System.out.println("Type number of goods reviews: ");
+                    good = sc.nextInt();
+                    System.out.println("Type number of neutrals reviews: ");
+                    neutral = sc.nextInt();
+                    System.out.println("Type number of bads reviews: ");
+                    bad = sc.nextInt();
+                    System.out.println("Type number of terrible reviews: ");
+                    terrible = sc.nextInt();
+
+
+                    sumMarch = excellent + good + neutral + bad + terrible;
+                    System.out.println("The total of number surveys answered this month was: " + sumMarch);
+                    break;
+                case 4:
+                    System.out.println("===APRIL===");
+                    System.out.println("Type number of excellent reviews: ");
+                    excellent = sc.nextInt();
+                    System.out.println("Type number of goods reviews: ");
+                    good = sc.nextInt();
+                    System.out.println("Type number of neutrals reviews: ");
+                    neutral = sc.nextInt();
+                    System.out.println("Type number of bads reviews: ");
+                    bad = sc.nextInt();
+                    System.out.println("Type number of terrible reviews: ");
+                    terrible = sc.nextInt();
+
+
+                    sumApril = excellent + good + neutral + bad + terrible;
+                    System.out.println("The total of number surveys answered this month was: " + sumApril);
+                    break;
+                case 5:
+                    System.out.println("===MAY===");
+                    System.out.println("Type number of excellent reviews: ");
+                    excellent = sc.nextInt();
+                    System.out.println("Type number of goods reviews: ");
+                    good = sc.nextInt();
+                    System.out.println("Type number of neutrals reviews: ");
+                    neutral = sc.nextInt();
+                    System.out.println("Type number of bads reviews: ");
+                    bad = sc.nextInt();
+                    System.out.println("Type number of terrible reviews: ");
+                    terrible = sc.nextInt();
+
+                    sumMay = excellent + good + neutral + bad + terrible;
+                    System.out.println("The total of number surveys answered this month was: " + sumMay);
+                    break;
+                case 6:
+                    System.out.println("===JULY===");
+                    System.out.println("Type number of excellent reviews: ");
+                    excellent = sc.nextInt();
+                    System.out.println("Type number of goods reviews: ");
+                    good = sc.nextInt();
+                    System.out.println("Type number of neutrals reviews: ");
+                    neutral = sc.nextInt();
+                    System.out.println("Type number of bads reviews: ");
+                    bad = sc.nextInt();
+                    System.out.println("Type number of terrible reviews: ");
+                    terrible = sc.nextInt();
+
+                    sumJune = excellent + good + neutral + bad + terrible;
+                    System.out.println("The total of number surveys answered this month was: " + sumJune);
+                    break;
+                case 7:
+                    System.out.println("===JULY===");
+                    System.out.println("Type number of excellent reviews: ");
+                    excellent = sc.nextInt();
+                    System.out.println("Type number of goods reviews: ");
+                    good = sc.nextInt();
+                    System.out.println("Type number of neutrals reviews: ");
+                    neutral = sc.nextInt();
+                    System.out.println("Type number of bads reviews: ");
+                    bad = sc.nextInt();
+                    System.out.println("Type number of terrible reviews: ");
+                    terrible = sc.nextInt();
+
+                    sumJuly = excellent + good + neutral + bad + terrible;
+                    System.out.println("The total of number surveys answered in this month was: " + sumJuly);
+                    break;
+                case 8:
+                    System.out.println("=== The indicators ===");
+                    double totalYear = sumJanuary+sumFebruary+sumMarch+sumApril+sumMay+sumJune;
+                    System.out.println("The number of total year: "+totalYear);
+                    double mediaAnnual = totalYear/6;
+                    double percentageChange = ((sumJuly - mediaAnnual) / mediaAnnual) * 100;
+                    System.out.println("Variação mensal: "+percentageChange+"%");
+
+                    break;
+                default:
+                    System.out.println("Invalid option! Try again");
+                    break;
+                case 9:
+                    break;
             }
-            int otima = 0;
-            int bom = 0;
-            int neutra = 0;
-            int ruins = 0;
-            int pessimas = 0;
-            int somaJaneiro = 0;
-            int somaFevereiro = 0;
-            int somaMarço = 0;
-            int somaAbril = 0;
-            int somaMaio = 0;
-            int somaJunho = 0;
-            int somaJulho = 0;
-
-
-            {
-                switch (mes) {
-                    case "janeiro":
-                        System.out.println("===JANEIRO===");
-                        System.out.println("Quantidade de avaliações OTIMAS: ");
-                        otima = sc.nextInt();
-                        System.out.println("Quantidade de avaliações BOAS: ");
-                        bom = sc.nextInt();
-                        System.out.println("Quantidade de avaliações NEUTRAS: ");
-                        neutra = sc.nextInt();
-                        System.out.println("Quantidade de avaliações RUINS: ");
-                        ruins = sc.nextInt();
-                        System.out.println("Quantidade de avaliações PESSIMAS: ");
-                        pessimas = sc.nextInt();
-                        sc.nextLine();
-                        somaJaneiro = otima + bom + neutra + ruins + pessimas;
-                        System.out.println("O total de pesquisas respondidas nesse mes foi de: " + somaJaneiro);
-                        break;
-
-                    case "fevereiro":
-                        System.out.println("===FEVEREIRO===");
-                        System.out.println("Quantidade de avaliações OTIMAS: ");
-                        otima = sc.nextInt();
-                        System.out.println("Quantidade de avaliações BOAS: ");
-                        bom = sc.nextInt();
-                        System.out.println("Quantidade de avaliações NEUTRAS: ");
-                        neutra = sc.nextInt();
-                        System.out.println("Quantidade de avaliações RUINS: ");
-                        ruins = sc.nextInt();
-                        System.out.println("Quantidade de avaliações PESSIMAS: ");
-                        pessimas = sc.nextInt();
-
-                        somaFevereiro = otima + bom + neutra + ruins + pessimas;
-                        System.out.println("O total de pesquisas respondidas nesse mes foi de: " + somaFevereiro);
-                        break;
-                    case "março":
-                        System.out.println("===MARÇO===");
-                        System.out.println("Quantidade de avaliações OTIMAS: ");
-                        otima = sc.nextInt();
-                        System.out.println("Quantidade de avaliações BOAS: ");
-                        bom = sc.nextInt();
-                        System.out.println("Quantidade de avaliações NEUTRAS: ");
-                        neutra = sc.nextInt();
-                        System.out.println("Quantidade de avaliações RUINS: ");
-                        ruins = sc.nextInt();
-                        System.out.println("Quantidade de avaliações PESSIMAS: ");
-                        pessimas = sc.nextInt();
-
-                        somaMarço = otima + bom + neutra + ruins + pessimas;
-                        System.out.println("O total de pesquisas respondidas nesse mes foi de: " + somaMarço);
-                        break;
-                    case "abril":
-                        System.out.println("===ABRIL===");
-                        System.out.println("Quantidade de avaliações OTIMAS: ");
-                        otima = sc.nextInt();
-                        System.out.println("Quantidade de avaliações BOAS: ");
-                        bom = sc.nextInt();
-                        System.out.println("Quantidade de avaliações NEUTRAS: ");
-                        neutra = sc.nextInt();
-                        System.out.println("Quantidade de avaliações RUINS: ");
-                        ruins = sc.nextInt();
-                        System.out.println("Quantidade de avaliações PESSIMAS: ");
-                        pessimas = sc.nextInt();
-
-                        somaAbril = otima + bom + neutra + ruins + pessimas;
-                        System.out.println("O total de pesquisas respondidas nesse mes foi de: " + somaAbril);
-                        break;
-                    case "maio":
-                        System.out.println("===MAIO===");
-                        System.out.println("Quantidade de avaliações OTIMAS: ");
-                        otima = sc.nextInt();
-                        System.out.println("Quantidade de avaliações BOAS: ");
-                        bom = sc.nextInt();
-                        System.out.println("Quantidade de avaliações NEUTRAS: ");
-                        neutra = sc.nextInt();
-                        System.out.println("Quantidade de avaliações RUINS: ");
-                        ruins = sc.nextInt();
-                        System.out.println("Quantidade de avaliações PESSIMAS: ");
-                        pessimas = sc.nextInt();
-
-                        somaMaio = otima + bom + neutra + ruins + pessimas;
-                        System.out.println("O total de pesquisas respondidas nesse mes foi de: " + somaMaio);
-                        break;
-                    case "junho":
-                        System.out.println("===JUNHO===");
-                        System.out.println("Quantidade de avaliações OTIMAS: ");
-                        otima = sc.nextInt();
-                        System.out.println("Quantidade de avaliações BOAS: ");
-                        bom = sc.nextInt();
-                        System.out.println("Quantidade de avaliações NEUTRAS: ");
-                        neutra = sc.nextInt();
-                        System.out.println("Quantidade de avaliações RUINS: ");
-                        ruins = sc.nextInt();
-                        System.out.println("Quantidade de avaliações PESSIMAS: ");
-                        pessimas = sc.nextInt();
-
-                        somaJunho = otima + bom + neutra + ruins + pessimas;
-                        System.out.println("O total de pesquisas respondidas nesse mes foi de: " + somaJunho);
-                        break;
-                    case "julho":
-                        System.out.println("===JULHO===");
-                        System.out.println("Quantidade de avaliações OTIMAS: ");
-                        otima = sc.nextInt();
-                        System.out.println("Quantidade de avaliações BOAS: ");
-                        bom = sc.nextInt();
-                        System.out.println("Quantidade de avaliações NEUTRAS: ");
-                        neutra = sc.nextInt();
-                        System.out.println("Quantidade de avaliações RUINS: ");
-                        ruins = sc.nextInt();
-                        System.out.println("Quantidade de avaliações PESSIMAS: ");
-                        pessimas = sc.nextInt();
-
-                        somaJulho = otima + bom + neutra + ruins + pessimas;
-                        System.out.println("O total de pesquisas respondidas nesse mes foi de: " + somaJulho);
-                        break;
-
-                    default:
-                        System.out.println("Opção inválida! Tente novamente");
-                        break;
-                }
+            if (month == 9){
+                b = true;
+                System.out.println("Program closed!");
             }
-            boolean sair = false;
-            while (!sair) {
-                System.out.println("O que deseja fazer agora?");
-                System.out.println("1 - Índices quantidade total de respostas (Anual)");
-                System.out.println("2 - Índices de avaliações ótimas/boas (Anual)");
-                System.out.println("3 - Índices de avaliações péssimas/ruins (Anual)");
-                System.out.println("1 - Índices quantidade total de respostas (Mensal)");
-                System.out.println("4 - Índices de avaliações ótimas/boas (Mensal)");
-                System.out.println("1 - Índices de avaliações péssimas/ruins(Mensal)");
-                System.out.println("-----------------------------------------------------------");
 
-                int opcao = sc.nextInt();
-                sc.nextLine();
-            }
-        }
+
+        } while (!b);
     }
+
 }
+
+
+
