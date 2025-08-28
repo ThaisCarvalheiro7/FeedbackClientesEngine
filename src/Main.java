@@ -1,5 +1,4 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -40,17 +39,17 @@ public class Main {
                 case 1:
                     System.out.println("===JANUARY===");
                     System.out.println("Type number of excellent reviews: ");
-                    excellent = sc.nextInt();
+                    int excellentJanuary = sc.nextInt();
                     System.out.println("Type number of goods reviews: ");
-                    good = sc.nextInt();
+                    int goodJanuary = sc.nextInt();
                     System.out.println("Type number of neutrals reviews: ");
-                    neutral = sc.nextInt();
+                    int neutralJanuary = sc.nextInt();
                     System.out.println("Type number of bads reviews: ");
-                    bad = sc.nextInt();
+                    int badJanuary = sc.nextInt();
                     System.out.println("Type number of terrible reviews: ");
                     terrible = sc.nextInt();
                     sc.nextLine();
-                    sumJanuary = excellent + good + neutral + bad + terrible;
+                    sumJanuary = excellentJanuary + goodJanuary + neutralJanuary + bad + terrible;
                     System.out.println("The total of number surveys answered this month was: " + sumJanuary);
                     System.out.println("If you want to next session for calculate yours indicators type 1 ");
                     continue;
@@ -161,7 +160,8 @@ public class Main {
                     System.out.println("The number of total year: "+totalYear);
                     double mediaAnnual = totalYear/6;
                     double percentageChange = ((sumJuly - mediaAnnual) / mediaAnnual) * 100;
-                    System.out.println("Variação mensal: "+percentageChange+"%");
+                    System.out.println("Monthly variation was: "+percentageChange+"%");
+                    int mediaTotalBoasRuins;
 
                     break;
                 default:
