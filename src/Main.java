@@ -26,6 +26,13 @@ public class Main {
         int sumExcellentGoodMay = 0;
         int sumExcellentGoodJune = 0;
         int sumExcellentGoodJuly = 0;
+        int sumBadTerribleJanuary = 0;
+        int sumBadTerribleFebruary = 0;
+        int sumBadTerribleMarch = 0;
+        int sumBadTerribleApril = 0;
+        int sumBadTerribleMay = 0;
+        int sumBadTerribleJune = 0;
+        int sumBadTerribleJuly = 0;
         boolean b = false;
 
         do {
@@ -58,8 +65,9 @@ public class Main {
                     System.out.println("Type number of terrible reviews: ");
                     int terribleJanuary = sc.nextInt();
                     sc.nextLine();
+
                     sumExcellentGoodJanuary = excellentJanuary+goodJanuary;
-                    int sumBadTerribleJanuary = badJanuary+terribleJanuary;
+                    sumBadTerribleJanuary = badJanuary+terribleJanuary;
                     sumJanuary = excellentJanuary + goodJanuary + neutralJanuary + bad + terrible;
                     System.out.println("The total of number surveys answered this month was: " + sumJanuary);
                     System.out.println("If you want to next session for calculate yours indicators type 1 ");
@@ -80,7 +88,7 @@ public class Main {
                     int terribleFebruary = sc.nextInt();
                     sc.nextLine();
 
-                    int sumBadTerribleFebruary = badFebruary+terribleFebruary;
+                    sumBadTerribleFebruary = badFebruary+terribleFebruary;
                     sumExcellentGoodFebruary = excellentFebruary+goodFebruary;
                     sumFebruary = excellent + good + neutral + bad + terrible;
                     System.out.println("The total of number surveys answered this month was: " + sumFebruary);
@@ -98,7 +106,7 @@ public class Main {
                     System.out.println("Type number of terrible reviews: ");
                     int terribleMarch = sc.nextInt();
 
-                    int sumBadTerribleMarch = badMarch+terribleMarch;
+                    sumBadTerribleMarch = badMarch+terribleMarch;
                     sumExcellentGoodMarch = excellentMarch+goodMarch;
                     sumMarch = excellentMarch + goodMarch + neutralMarch + badMarch + terribleMarch;
                     System.out.println("The total of number surveys answered this month was: " + sumMarch);
@@ -116,7 +124,7 @@ public class Main {
                     System.out.println("Type number of terrible reviews: ");
                     int terribleApril = sc.nextInt();
 
-                    int sumBadTerribleApril = badApril+terribleApril;
+                    sumBadTerribleApril = badApril+terribleApril;
                     sumExcellentGoodApril = excellentApril+goodApril;
                     sumApril = excellentApril + goodApril + neutralApril + badApril + terribleApril;
                     System.out.println("The total of number surveys answered this month was: " + sumApril);
@@ -134,7 +142,7 @@ public class Main {
                     System.out.println("Type number of terrible reviews: ");
                     int terribleMay = sc.nextInt();
 
-                    int sumBadTerribleMay = badMay+terribleMay;
+                    sumBadTerribleMay = badMay+terribleMay;
                     sumExcellentGoodMay = excellentMay+goodMay;
                     sumMay = excellentMay + goodMay + neutralMay + badMay + terribleMay;
                     System.out.println("The total of number surveys answered this month was: " + sumMay);
@@ -152,7 +160,7 @@ public class Main {
                     System.out.println("Type number of terrible reviews: ");
                     int terribleJune = sc.nextInt();
 
-                    int sumBadTerrobleJune= badJune+terribleJune;
+                    sumBadTerribleJune= badJune+terribleJune;
                     sumExcellentGoodJune = excellentJune+goodJune;
                     sumJune = excellentJune + goodJune + neutralJune + badJune + terribleJune;
                     System.out.println("The total of number surveys answered this month was: " + sumJune);
@@ -170,7 +178,7 @@ public class Main {
                     System.out.println("Type number of terrible reviews: ");
                     int terribleJuly = sc.nextInt();
 
-
+                    sumBadTerribleJuly= badJuly+terribleJuly;
                     sumExcellentGoodJuly = excellentJuly + goodJuly + neutralJuly + badJuly + terribleJuly;
                     sumJuly = excellentJuly + goodJuly + neutralJuly + badJuly + terribleJuly;
                     System.out.println("The total of number surveys answered in this month was: " + sumJuly);
@@ -179,15 +187,55 @@ public class Main {
                     System.out.println("=== The indicators ===");
                     double totalYear = sumJanuary+sumFebruary+sumMarch+sumApril+sumMay+sumJune;
                     System.out.println("The number of total year: "+totalYear);
-                    double mediaAnnual = totalYear/6;
-                    double percentageChange = ((sumJuly - mediaAnnual) / mediaAnnual) * 100;
-                    System.out.println("Monthly variation was: "+percentageChange+"%");
-                    int somaTotalBoasOtimasAnual = sumExcellentGoodJanuary+sumExcellentGoodFebruary+sumExcellentGoodMarch+sumExcellentGoodApril+sumExcellentGoodMay+sumExcellentGoodJune+sumExcellentGoodJuly;
-                    double mediaBoasOtimasAnual = somaTotalBoasOtimasAnual/7;
-                    double variacaoAnualBoasOtimas = ((sumExcellentGoodJuly - mediaBoasOtimasAnual)/mediaBoasOtimasAnual)*100;
-                    double variacaoMensalBoasOtimas = ((sumExcellentGoodJune + sumExcellentGoodJuly)/sumExcellentGoodJune)*100;
-                    System.out.println("The annual variation good and excellent was:"+variacaoAnualBoasOtimas);
-                    System.out.println("The monthly variation good and excllent was: "+variacaoMensalBoasOtimas);
+                    double mediaTotalAnnual = totalYear/6;
+                    double percentageTotalAnnualChange = ((sumJuly - mediaTotalAnnual) / mediaTotalAnnual) * 100;
+                    System.out.println("Annual variation was: "+percentageTotalAnnualChange+"%");
+                    double monthlyPercentage = ((sumJune - sumJuly)/sumJune)*100;
+                    System.out.println("Monthly percentage was: "+monthlyPercentage+"%");
+
+                    if(sumJuly > sumJune){
+                        System.out.println("The monthly variation total grow: "+monthlyPercentage);
+                    } else if (sumJuly < sumJune){
+                        System.out.println("The monthly variation total down"+monthlyPercentage);
+                    } else if (sumJuly > mediaTotalAnnual ){
+                        System.out.println("The annual variation grow: "+mediaTotalAnnual+"%");
+                    } else if (sumJuly < mediaTotalAnnual) {
+                        System.out.println("The annual variation down: "+mediaTotalAnnual+"%");
+                    }
+
+                    System.out.println("==========================================================");
+
+                    int sumTotalGoodExcellentAnnual = sumExcellentGoodJanuary+sumExcellentGoodFebruary+sumExcellentGoodMarch+sumExcellentGoodApril+sumExcellentGoodMay+sumExcellentGoodJune+sumExcellentGoodJuly;
+                    double mediaGoodOExcellentAnnual = sumTotalGoodExcellentAnnual /7;
+                    double percentageAnnualGoodExcellent = ((sumExcellentGoodJuly - mediaGoodOExcellentAnnual)/ mediaGoodOExcellentAnnual)*100;
+                    double percentageMonthlyGoodExcellent = ((sumExcellentGoodJune + sumExcellentGoodJuly)/sumExcellentGoodJune)*100;
+
+                    if (sumExcellentGoodJuly > sumExcellentGoodJune){
+                        System.out.println("The variation monthly bad and terrible grow: "+percentageMonthlyGoodExcellent+"%");
+                    } else if (sumExcellentGoodJuly < sumExcellentGoodJune){
+                        System.out.println("The variation monthly bad and terrible down: "+percentageMonthlyGoodExcellent+"%");
+                    } else if (sumExcellentGoodJuly > mediaGoodOExcellentAnnual) {
+                        System.out.println("The variation annual good and excellent grow: "+percentageAnnualGoodExcellent+"%");
+                    }else if (sumExcellentGoodJuly < mediaGoodOExcellentAnnual){
+                        System.out.println("The variation annual good and excellent down: "+percentageAnnualGoodExcellent+"%");
+                    }
+
+                    System.out.println("===========================================================");
+                    double somaTotalRuinsPessimos = ((sumBadTerribleJanuary+sumBadTerribleFebruary+sumBadTerribleMarch+sumBadTerribleApril+sumBadTerribleMay+sumBadTerribleJune+sumBadTerribleJuly));
+                    double mediaRuinsPessimosAnual = somaTotalRuinsPessimos/7;
+                    double porcentagemAnualRuinsPessimos = ((sumBadTerribleJuly - mediaRuinsPessimosAnual)/mediaRuinsPessimosAnual)*100;
+                    double porcentagemMesalRuinsPessimos = ((sumBadTerribleJune-sumBadTerribleJuly)/sumBadTerribleJune)*100;
+
+                    if (sumBadTerribleJuly > sumBadTerribleJune){
+                        System.out.println("The variation monthly bad and terrible down: "+porcentagemMesalRuinsPessimos+"%");
+                    } else if (sumBadTerribleJuly < sumBadTerribleJune){
+                        System.out.println("The variation monthly bad and terrible grow: "+porcentagemMesalRuinsPessimos+"%");
+                    } else if (sumBadTerribleJuly > mediaRuinsPessimosAnual) {
+                        System.out.println("The variation annual bad and terrible grow: "+porcentagemAnualRuinsPessimos+"%");
+                    } else if (sumBadTerribleJuly < mediaRuinsPessimosAnual) {
+                        System.out.println("The variation annual bad and terrible down:"+porcentagemAnualRuinsPessimos+"%");
+                    }
+
                     break;
                 default:
                     System.out.println("Invalid option! Try again");
