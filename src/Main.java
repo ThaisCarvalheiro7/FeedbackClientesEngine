@@ -1,4 +1,5 @@
 // fazer a mesma coisa com as avaliações ruins/pessimas ::)))
+// revisar as contas, acredito que o melhor seja apagar e fazer tudo novamente, passo a passo, uma de cada vez
 
 
 import java.util.Scanner;
@@ -33,6 +34,9 @@ public class Main {
         int sumBadTerribleMay = 0;
         int sumBadTerribleJune = 0;
         int sumBadTerribleJuly = 0;
+        int sumBadTerribleAugust = 0;
+        int sumExcellentGoodAugust = 0;
+        int sumAugust = 0;
         boolean b = false;
 
         do {
@@ -90,7 +94,7 @@ public class Main {
 
                     sumBadTerribleFebruary = badFebruary+terribleFebruary;
                     sumExcellentGoodFebruary = excellentFebruary+goodFebruary;
-                    sumFebruary = excellent + good + neutral + bad + terrible;
+                    sumFebruary = excellentFebruary + goodFebruary + neutralFebruary + badFebruary+ terribleFebruary;
                     System.out.println("The total of number surveys answered this month was: " + sumFebruary);
                     break;
                 case 3:
@@ -184,66 +188,47 @@ public class Main {
                     System.out.println("The total of number surveys answered in this month was: " + sumJuly);
                     break;
                 case 8:
-                    System.out.println("=== The indicators ===");
-                    double totalYear = sumJanuary+sumFebruary+sumMarch+sumApril+sumMay+sumJune;
-                    System.out.println("The number of total year: "+totalYear);
-                    double mediaTotalAnnual = totalYear/6;
-                    double percentageTotalAnnualChange = ((sumJuly - mediaTotalAnnual) / mediaTotalAnnual) * 100;
-                    System.out.println("Annual variation was: "+percentageTotalAnnualChange+"%");
-                    double monthlyPercentage = ((sumJune - sumJuly)/sumJune)*100;
-                    System.out.println("Monthly percentage was: "+monthlyPercentage+"%");
+                    System.out.println("===AUGUST===");
+                    System.out.println("Type number of excellent reviews: ");
+                    int excellentAugust = sc.nextInt();
+                    System.out.println("Type number of goods reviews: ");
+                    int goodAugust = sc.nextInt();
+                    System.out.println("Type number of neutrals reviews: ");
+                    int neutralAugust = sc.nextInt();
+                    System.out.println("Type number of bads reviews: ");
+                    int badAugust = sc.nextInt();
+                    System.out.println("Type number of terrible reviews: ");
+                    int terribleAugust = sc.nextInt();
 
-                    if(sumJuly > sumJune){
-                        System.out.println("The monthly variation total grow: "+monthlyPercentage);
-                    } else if (sumJuly < sumJune){
-                        System.out.println("The monthly variation total down"+monthlyPercentage);
-                    } else if (sumJuly > mediaTotalAnnual ){
-                        System.out.println("The annual variation grow: "+mediaTotalAnnual+"%");
-                    } else if (sumJuly < mediaTotalAnnual) {
-                        System.out.println("The annual variation down: "+mediaTotalAnnual+"%");
-                    }
-
-                    System.out.println("==========================================================");
-
-                    int sumTotalGoodExcellentAnnual = sumExcellentGoodJanuary+sumExcellentGoodFebruary+sumExcellentGoodMarch+sumExcellentGoodApril+sumExcellentGoodMay+sumExcellentGoodJune+sumExcellentGoodJuly;
-                    double mediaGoodOExcellentAnnual = sumTotalGoodExcellentAnnual /7;
-                    double percentageAnnualGoodExcellent = ((sumExcellentGoodJuly - mediaGoodOExcellentAnnual)/ mediaGoodOExcellentAnnual)*100;
-                    double percentageMonthlyGoodExcellent = ((sumExcellentGoodJune + sumExcellentGoodJuly)/sumExcellentGoodJune)*100;
-
-                    if (sumExcellentGoodJuly > sumExcellentGoodJune){
-                        System.out.println("The variation monthly bad and terrible grow: "+percentageMonthlyGoodExcellent+"%");
-                    } else if (sumExcellentGoodJuly < sumExcellentGoodJune){
-                        System.out.println("The variation monthly bad and terrible down: "+percentageMonthlyGoodExcellent+"%");
-                    } else if (sumExcellentGoodJuly > mediaGoodOExcellentAnnual) {
-                        System.out.println("The variation annual good and excellent grow: "+percentageAnnualGoodExcellent+"%");
-                    }else if (sumExcellentGoodJuly < mediaGoodOExcellentAnnual){
-                        System.out.println("The variation annual good and excellent down: "+percentageAnnualGoodExcellent+"%");
-                    }
-
-                    System.out.println("===========================================================");
-                    double somaTotalRuinsPessimos = ((sumBadTerribleJanuary+sumBadTerribleFebruary+sumBadTerribleMarch+sumBadTerribleApril+sumBadTerribleMay+sumBadTerribleJune+sumBadTerribleJuly));
-                    double mediaRuinsPessimosAnual = somaTotalRuinsPessimos/7;
-                    double porcentagemAnualRuinsPessimos = ((sumBadTerribleJuly - mediaRuinsPessimosAnual)/mediaRuinsPessimosAnual)*100;
-                    double porcentagemMesalRuinsPessimos = ((sumBadTerribleJune-sumBadTerribleJuly)/sumBadTerribleJune)*100;
-
-                    if (sumBadTerribleJuly > sumBadTerribleJune){
-                        System.out.println("The variation monthly bad and terrible down: "+porcentagemMesalRuinsPessimos+"%");
-                    } else if (sumBadTerribleJuly < sumBadTerribleJune){
-                        System.out.println("The variation monthly bad and terrible grow: "+porcentagemMesalRuinsPessimos+"%");
-                    } else if (sumBadTerribleJuly > mediaRuinsPessimosAnual) {
-                        System.out.println("The variation annual bad and terrible grow: "+porcentagemAnualRuinsPessimos+"%");
-                    } else if (sumBadTerribleJuly < mediaRuinsPessimosAnual) {
-                        System.out.println("The variation annual bad and terrible down:"+porcentagemAnualRuinsPessimos+"%");
-                    }
+                    sumBadTerribleAugust= badAugust+terribleAugust;
+                    sumExcellentGoodAugust = excellentAugust + goodAugust + neutralAugust + badAugust + terribleAugust;
+                    sumAugust = excellentAugust + goodAugust + neutralAugust + badAugust + terribleAugust;
+                    System.out.println("The total of number surveys answered in this month was: " + sumAugust);
+                    break;
+                case 9:
+                    System.out.println("==== The indicators ====");
+                    int numTotal = (sumJanuary+sumFebruary+sumMarch+sumApril+sumMay+sumJune+sumJuly+sumAugust);
+                    double totalAverageYear = numTotal/8;
+                    double totalAnnualVariation = ((sumAugust- totalAverageYear)/ totalAverageYear) * 100;
+                    System.out.println("|-------------------------------------------------------|");
+                    System.out.println("|Annual media variation was: "+"%"+"                    |");
+                    System.out.println("|-------------------------------------------------------|");
+                    int totalGoodExcellentAnnual = sumExcellentGoodJanuary+sumExcellentGoodFebruary+sumExcellentGoodMarch+sumExcellentGoodApril+sumExcellentGoodMay+sumExcellentGoodJune+sumExcellentGoodJuly+sumBadTerribleAugust;
+                    double totalMediaYearExcllentGood = totalGoodExcellentAnnual/8;
+                    double totalAnnualExcellentGood = totalMediaYearExcllentGood/8;
+                    double totalAnnualExcellentGoodVariation= (totalAnnualExcellentGood/totalAnnualExcellentGood) * 100;
+                    System.out.println("|-------------------------------------------------------|");
+                    System.out.println("|Excellent and good media variation was: "+totalAnnualExcellentGoodVariation+"%");
+                    System.out.println("|-------------------------------------------------------|");
 
                     break;
                 default:
                     System.out.println("Invalid option! Try again");
                     break;
-                case 9:
+                case 10:
                     break;
             }
-            if (month == 9){
+            if (month == 11){
                 b = true;
                 System.out.println("Program closed!");
             }
