@@ -183,7 +183,7 @@ public class Main {
                     int terribleJuly = sc.nextInt();
 
                     sumBadTerribleJuly= badJuly+terribleJuly;
-                    sumExcellentGoodJuly = excellentJuly + goodJuly + neutralJuly + badJuly + terribleJuly;
+                    sumExcellentGoodJuly = excellentJuly + goodJuly;
                     sumJuly = excellentJuly + goodJuly + neutralJuly + badJuly + terribleJuly;
                     System.out.println("The total of number surveys answered in this month was: " + sumJuly);
                     break;
@@ -201,7 +201,7 @@ public class Main {
                     int terribleAugust = sc.nextInt();
 
                     sumBadTerribleAugust= badAugust+terribleAugust;
-                    sumExcellentGoodAugust = excellentAugust + goodAugust + neutralAugust + badAugust + terribleAugust;
+                    sumExcellentGoodAugust = excellentAugust + goodAugust;
                     sumAugust = excellentAugust + goodAugust + neutralAugust + badAugust + terribleAugust;
                     System.out.println("The total of number surveys answered in this month was: " + sumAugust);
                     break;
@@ -211,16 +211,20 @@ public class Main {
                     double totalAverageYear = numTotal/8;
                     double totalAnnualVariation = ((sumAugust- totalAverageYear)/ totalAverageYear) * 100;
                     System.out.println("|-------------------------------------------------------|");
-                    System.out.println("|Annual media variation was: "+"%"+"                    |");
-                    System.out.println("|-------------------------------------------------------|");
-                    int totalGoodExcellentAnnual = sumExcellentGoodJanuary+sumExcellentGoodFebruary+sumExcellentGoodMarch+sumExcellentGoodApril+sumExcellentGoodMay+sumExcellentGoodJune+sumExcellentGoodJuly+sumBadTerribleAugust;
-                    double totalMediaYearExcllentGood = totalGoodExcellentAnnual/8;
-                    double totalAnnualExcellentGood = totalMediaYearExcllentGood/8;
-                    double totalAnnualExcellentGoodVariation= (totalAnnualExcellentGood/totalAnnualExcellentGood) * 100;
-                    System.out.println("|-------------------------------------------------------|");
-                    System.out.println("|Excellent and good media variation was: "+totalAnnualExcellentGoodVariation+"%");
+                    System.out.println("|Annual media variation was: "+totalAnnualVariation+"   |");
                     System.out.println("|-------------------------------------------------------|");
 
+                    int sumTotalExcellentGood = sumExcellentGoodJanuary+sumExcellentGoodFebruary+sumExcellentGoodMarch+sumExcellentGoodApril+sumExcellentGoodMay+sumExcellentGoodJune+sumExcellentGoodJuly+sumExcellentGoodAugust;
+                    double totalAverageExcellentGoodYear = sumTotalExcellentGood /8;
+                    double variationExcellentGoodYear = ((sumExcellentGoodAugust - totalAverageExcellentGoodYear)/ totalAverageExcellentGoodYear) * 100;
+                    System.out.println("|----------------------------------------------------------------------|");
+                    System.out.println("The variation excellent and good was: "+ variationExcellentGoodYear +"%");
+                    System.out.println("|----------------------------------------------------------------------|");
+
+                    int sumTotalBadTerribleYear = sumBadTerribleJanuary+sumBadTerribleFebruary+sumBadTerribleMarch+sumBadTerribleApril+sumBadTerribleMay+sumBadTerribleJune+sumBadTerribleJuly+sumBadTerribleAugust;
+                    double mediaRuinsPessimas = sumTotalBadTerribleYear/8;
+                    double variacaoRuinsPessimoAno = ((sumBadTerribleAugust-mediaRuinsPessimas)/mediaRuinsPessimas) * 100;
+                    System.out.println("A variação total de pesquisas ruins e péssimas foi: "+variacaoRuinsPessimoAno);
                     break;
                 default:
                     System.out.println("Invalid option! Try again");
