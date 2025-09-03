@@ -222,14 +222,15 @@ public class Main {
                     System.out.println("Annual variation excellent and good was: "+ variaçãoBoasMedias +"%");
                     System.out.println("|----------------------------------------------------------------------|");
 
-                    /*int totalRuins = sumBadTerribleJanuary+sumBadTerribleFebruary+sumBadTerribleMarch+sumBadTerribleApril+sumBadTerribleMay+sumBadTerribleJune+sumBadTerribleJuly+sumBadTerribleAugust;
-                    double mediaRuins = totalRuins /8;
-                    double variaçãoRuins = ((sumBadTerribleAugust - mediaRuins)/ mediaRuins) * 100;
-                    System.out.println("A variacao de ruins e pessimas:"+variaçãoRuins);
-                    */
-                    double totalMensal = ((sumAugust - sumJuly) / sumJuly)*100;
+                    int totalSub = sumAugust - sumJuly;
+                    long divisao = totalSub/sumJuly;
+                    System.out.println("|----------------------------------------------------------------------|");
+                    System.out.println(" Variacao mensal total: "+totalSub);
+                    System.out.println(" Variacao mensal total divisao: "+divisao);
 
-                    System.out.println("A variação total no mes foi:"+totalMensal);
+                    System.out.println("soma agosto: "+sumAugust);
+                    System.out.println("soma julho: "+sumJuly);
+                    System.out.println("|----------------------------------------------------------------------|");
                     break;
                 default:
                     System.out.println("Invalid option! Try again");
