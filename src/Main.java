@@ -1,5 +1,3 @@
-// fazer a mesma coisa com as avaliações ruins/pessimas ::)))
-// revisar as contas, acredito que o melhor seja apagar e fazer tudo novamente, passo a passo, uma de cada vez
 
 
 import java.util.Scanner;
@@ -43,17 +41,14 @@ public class Main {
         do {
             contador++;
             System.out.println("=== Enter the month ====");
-            System.out.println("=== 1 - January ====");
-            System.out.println("=== 2 - February ====");
-            System.out.println("=== 3 - March ====");
-            System.out.println("=== 4- April ====");
-            System.out.println("=== 5 - May ====");
-            System.out.println("=== 6 - June ====");
-            System.out.println("=== 7 - July ====");
-            System.out.println("=== 8 - Next session ====");
-            System.out.println("=== 9 - Close program ====");
+            System.out.println("=== 1 - Pesquisa por equipe (Índice por equipe) ====");
+            System.out.println("=== 2 - Pesquisa por equipe (Índice individual) ====");
+            System.out.println("=== 3 - Chamados abertos/resolvidos (Equipe ou individual) ====");
 
-            System.out.println("If you want to next session for calculate yours indicators type (Next) ");
+
+
+
+            System.out.println("Digite o que deseja calcular ");
 
             int month = sc.nextInt();
             switch (month) {
@@ -76,10 +71,7 @@ public class Main {
                     somaJaneiro = otimoJaneiro + bomJaneiro + neutroJaneiro + ruim + pessimo;
                     System.out.println("The total of number surveys answered this month was: " + somaJaneiro);
                     System.out.println("If you want to next session for calculate yours indicators type 1 ");
-                    continue;
-
-
-                case 2:
+//================================================================================================================================//
                     System.out.println("===FEBRUARY===");
                     System.out.println("Type number of excellent reviews: ");
                     int otimoFevereiro = sc.nextInt();
@@ -97,8 +89,8 @@ public class Main {
                     somaExcelenteFevereiro = otimoFevereiro+ bomFevereiro;
                     somaFevereiro = otimoFevereiro + bomFevereiro + neutroFevereiro + ruimFevereiro + pessimoFevereiro;
                     System.out.println("The total of number surveys answered this month was: " + somaFevereiro);
-                    break;
-                case 3:
+//================================================================================================================================//
+
                     System.out.println("===MARCH===");
                     System.out.println("Type number of excellent reviews: ");
                     int otimoMarco = sc.nextInt();
@@ -115,8 +107,7 @@ public class Main {
                     somaExcelenteMarco = otimoMarco + bomMarco;
                     somaMarço = otimoMarco + bomMarco + neutroMarco + ruimMarco + pessimoMarco;
                     System.out.println("The total of number surveys answered this month was: " + somaMarço);
-                    break;
-                case 4:
+                    //================================================================================================================================//
                     System.out.println("===APRIL===");
                     System.out.println("Type number of excellent reviews: ");
                     int otimoAbril = sc.nextInt();
@@ -133,8 +124,7 @@ public class Main {
                     somaExcelenteAbril = otimoAbril + bomAbril;
                     somaAbril = otimoAbril + bomAbril + neutroAbril + ruimAbril + pessimoAbril;
                     System.out.println("The total of number surveys answered this month was: " + somaAbril);
-                    break;
-                case 5:
+                    //===============================================================================================//
                     System.out.println("===MAY===");
                     System.out.println("Type number of excellent reviews: ");
                     int otimoMaio = sc.nextInt();
@@ -151,15 +141,14 @@ public class Main {
                     somaExcelenteMaio = otimoMaio+bomMaio;
                     somaMaio = otimoMaio + bomMaio + neutroMaio + ruimMaio + pessimoMaio;
                     System.out.println("The total of number surveys answered this month was: " + somaMaio);
-                    break;
-                case 6:
+                    //===============================================================================================//
                     System.out.println("===JUNE===");
                     System.out.println("Type number of excellent reviews: ");
                     int otimoJunho = sc.nextInt();
                     System.out.println("Type number of goods reviews: ");
                     int bomJunho = sc.nextInt();
                     System.out.println("Type number of neutrals reviews: ");
-                   int neutroJunho = sc.nextInt();
+                    int neutroJunho = sc.nextInt();
                     System.out.println("Type number of bads reviews: ");
                     int ruimJunho = sc.nextInt();
                     System.out.println("Type number of terrible reviews: ");
@@ -169,8 +158,7 @@ public class Main {
                     somaExclenteJunho = otimoJunho + bomJunho;
                     somaJunho = otimoJunho + bomJunho + neutroJunho + ruimJunho + pessimoJunho;
                     System.out.println("The total of number surveys answered this month was: " + somaJunho);
-                    break;
-                case 7:
+                    //===============================================================================================//
                     System.out.println("===JULY===");
                     System.out.println("Type number of excellent reviews: ");
                     int otimoJulho = sc.nextInt();
@@ -187,8 +175,7 @@ public class Main {
                     somaExcelenteJulho = otimoJulho + bomJulho;
                     somaJulho = otimoJulho + bomJulho + neutroJulho + ruimJulho + pessimoJulho;
                     System.out.println("The total of number surveys answered in this month was: " + somaJulho);
-                    break;
-                case 8:
+                    //===============================================================================================//
                     System.out.println("===AUGUST===");
                     System.out.println("Type number of excellent reviews: ");
                     int otimoAgosto = sc.nextInt();
@@ -205,15 +192,16 @@ public class Main {
                     somaExcelenteAgosto = otimoAgosto + bomAgosto;
                     somaAgosto = otimoAgosto + bomAgosto + neutrolAgosto + ruimAgosto + pessimoAgosto;
                     System.out.println("The total of number surveys answered in this month was: " + somaAgosto);
-                    break;
-                case 9:
-                        int totalAnualPesquisa = somaJaneiro+somaFevereiro+somaMarço+somaAbril+somaMaio+somaJunho+somaJulho+somaAgosto;
-                        double mediaAnualPesquisa = (double) totalAnualPesquisa / 8;
-                        double subMediaAnual = somaAgosto - mediaAnualPesquisa;
-                        double percentualTotalAnual = (subMediaAnual/mediaAnualPesquisa) * 100;
-                    System.out.println("|=============================================|");
+
+                    System.out.println("PESQUISA DE SATISFAÇÃO POR EQUIPE");
+                    System.out.println(" ");
+                    int totalAnualPesquisa = somaJaneiro+somaFevereiro+somaMarço+somaAbril+somaMaio+somaJunho+somaJulho+somaAgosto;
+                    double mediaAnualPesquisa = (double) totalAnualPesquisa / 8;
+                    double subMediaAnual = somaAgosto - mediaAnualPesquisa;
+                    double percentualTotalAnual = (subMediaAnual/mediaAnualPesquisa) * 100;
+                    System.out.println("|==============================================================|");
                     System.out.println("|A variação total anual foi de: "+percentualTotalAnual+"%");
-                    System.out.println("|=============================================|");
+                    System.out.println("|==============================================================|");
                     System.out.println(" ");
                     //============================================================================================================================//
                     int totalOtimasBoasAnual = somaExcelentJaneiro+somaExcelenteFevereiro+ somaExcelenteMarco +somaExcelenteAbril+somaExcelenteMaio+somaExclenteJunho+somaExcelenteJulho+somaExcelenteAgosto;
@@ -249,24 +237,44 @@ public class Main {
                     System.out.println(" ");
                     //====================================================================================================================//
                     double totalPessomasRuinsMensal = somaRuimPessimoAgosto - somaRuimPessimoJulho;
-                    double percentualORuinsPessimosBoasMensal = (double) (totalPessomasRuinsMensal /somaRuimPessimoJulho) * 100;
+                    double percentualRuinsPessimosBoasMensal = (double) (totalPessomasRuinsMensal /somaRuimPessimoJulho) * 100;
                     System.out.println("|=================================================================================|");
-                    System.out.println("|A variação de avaliações mensal boas e otimas foi:"+ percentualORuinsPessimosBoasMensal +"%");
+                    System.out.println("|A variação de avaliações mensal boas e otimas foi:"+ percentualRuinsPessimosBoasMensal +"%");
                     System.out.println("|=================================================================================|");
                     System.out.println(" ");
+                    continue;
+
+                case 2:
+                    System.out.println("Digite os resolvidos: ");
+                    int resolvidos = sc.nextInt();
+                    System.out.println("Digite os certificados: ");
+                    int certificados = sc.nextInt();
+
+                    double percentualIndividual = (double) certificados / resolvidos;
+                    System.out.println("|=========================================|");
+                    System.out.println("|O percentual é: "+percentualIndividual+"%|");
+                    System.out.println("|========================================-|");
+
                     break;
+                case 3:
+                    System.out.println("Digite a quantidade de chamados abertos :");
+                    int chamadosAbertos = sc.nextInt();
+                    System.out.println("Digite a quantidade de chamados resolvidos: ");
+                    int chamadosResolvidos = sc.nextInt();
+                    double percentualResolvidos = (double) chamadosResolvidos / chamadosAbertos;
+                    System.out.println("|=================================================================|");
+                    System.out.println("|O percentual de chamados resolvidos foi:"+percentualResolvidos+"%|");
+                    System.out.println("|=================================================================|");
+
                 default:
-                    System.out.println("Invalid option! Try again");
-                    break;
-                case 10:
-                    break;
+                        if (month == 0){
+                            b = true;
+                            System.out.println("Program closed!");
+                        }else {
+                            System.out.println("Invalid option! Try again");
+                            break;
+                        }
             }
-            if (month == 11){
-                b = true;
-                System.out.println("Program closed!");
-            }
-
-
         } while (!b);
     }
 
