@@ -80,6 +80,33 @@ public class Main {
         double variacaoMensalPessimasRuins = ((double) ( pessimasRuins[mesAtual] - pessimasRuins[mesAnterior]) / pessimasRuins[mesAnterior]) * 100;
         System.out.println("A variação mensal de avaliações péssimas e ruins foi de: "+variacaoMensalOtimasBoas+"%\n");
 
+        System.out.println("====CALCULOS INDIVIDUAIS===");
+        Scanner sc2 = new Scanner(System.in);
+        int [] chamadosResolvidos = new int [100];
+        int [] chamadosCertificados = new int[100];
+        String[] nomes = new String[100];
+        double percentual [] = new double[100];
+        int resolvidos = 0;
+        int certificados = 0;
+        String analista;
+
+        for (int i = 0; i < chamadosCertificados.length; i++){
+            System.out.println("===CHAMADOS CERTIFICADOS===");
+            System.out.println("ANALISTA: ");
+            analista = sc2.next();
+            System.out.println("TOTAL RESOLVIDOS: ");
+            resolvidos = sc2.nextInt();
+            System.out.println("TOTAL CERTIFICADOS: ");
+            certificados = sc2.nextInt();
+
+            chamadosResolvidos[i] = resolvidos;
+            chamadosCertificados[i] = certificados;
+
+            percentual [i] = (double)certificados / resolvidos;
+            System.out.println("A porcentagem é: "+percentual[i]);
+
+        }
+
     }
 
     }
