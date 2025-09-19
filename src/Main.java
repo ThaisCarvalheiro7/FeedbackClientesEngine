@@ -14,7 +14,21 @@ public class Main {
         int[] totalMensal = new int [8];
         int[] otimasBoas = new int [8];
         int[] pessimasRuins = new int[8];
+        int escolha = 0;
 
+        System.out.println("===CALCULADORA DE INDICADORES====\n");
+        System.out.println("--------MENU--------");
+        System.out.println("1 - Pesquisa de satisfação (Índices totais do ano e mês)");
+        System.out.println("2 - Pesquisa de satisfação individual");
+        System.out.println("3 - Pesquisa de satisfação percentual equipe");
+
+        System.out.println("Digite o indicador que deseja calcular: ");
+        escolha = sc.nextInt();
+
+        switch (escolha){
+            case 1:
+
+        }
 
         for (int i = 0; i < nomeMeses.length; i++){
             System.out.println("==="+nomeMeses[i]+"===");
@@ -66,27 +80,27 @@ public class Main {
         System.out.println(String.format("A variação anual total foi de: %.2f%%", variacaoTotalAnual));
 
         double variacaoAnualOtimasBoas = ((otimasBoas[mesAtual] - mediaOtimasBoas)/mediaOtimasBoas)*100;
-        System.out.println(String.format("A variação anual de avaliações ótimas e boas foi de: %.2f%%"+variacaoAnualOtimasBoas+"\n"));
+        System.out.println(String.format("A variação anual de avaliações ótimas e boas foi de: %.2f%%",variacaoAnualOtimasBoas));
 
         double variacaoAnualOPessimasRuins = ((pessimasRuins[mesAtual] - mediaPessimasRuins)/mediaPessimasRuins)*100;
-        System.out.println(String.format("A variação anual de avaliações péssimas e ruins foi de: %.2f%%"+ variacaoAnualOPessimasRuins +"%\n"));
+        System.out.println(String.format("A variação anual de avaliações péssimas e ruins foi de: %.2f%%", variacaoAnualOPessimasRuins));
 
         System.out.println("|---INDICADORES MENSAIS---|\n");
         double variacaoMensalTotal = ((double) ( totalMensal[mesAtual] - totalMensal[mesAnterior]) / totalMensal[mesAnterior]) * 100;
-        System.out.println("A variação mensal no total de avalicações foi de: "+variacaoMensalTotal+"%\n");
+        System.out.println(String.format("A variação mensal no total de avalicações foi de: %.2f%%",variacaoMensalTotal));
 
         double variacaoMensalOtimasBoas = ((double) ( otimasBoas[mesAtual] - otimasBoas[mesAnterior]) / otimasBoas[mesAnterior]) * 100;
-        System.out.println("A variação mensal de avaliações ótimas e boas foi de: "+variacaoMensalOtimasBoas+"%\n");
+        System.out.println(String.format("A variação mensal de avaliações ótimas e boas foi de: %.2f%%",variacaoMensalOtimasBoas));
 
         double variacaoMensalPessimasRuins = ((double) ( pessimasRuins[mesAtual] - pessimasRuins[mesAnterior]) / pessimasRuins[mesAnterior]) * 100;
-        System.out.println("A variação mensal de avaliações péssimas e ruins foi de: "+variacaoMensalOtimasBoas+"%\n");
+        System.out.println(String.format("A variação mensal de avaliações péssimas e ruins foi de: %.2f%%",variacaoMensalOtimasBoas));
 
 
         Scanner sc2 = new Scanner(System.in);
-        int [] chamadosResolvidos = new int [1];
-        int [] chamadosCertificados = new int[1];
-        String[] nomes = new String[100];
-        double percentual [] = new double[1];
+        int [] chamadosResolvidos = new int [39];
+        int [] chamadosCertificados = new int[39];
+        String[] nomes = new String[39];
+        double percentual [] = new double[39];
         int resolvidosIndividual = 0;
         int certificadosIndividual = 0;
         String analista;
@@ -94,13 +108,12 @@ public class Main {
         for (int i = 0; i < chamadosCertificados.length; i++){
             System.out.println("====CALCULOS PERCENTUAIS INDIVIDUAIS===\n");
             System.out.println("ANALISTA: ");
-            System.out.println(" ");
             analista = sc2.next();
+            System.out.println(" ");
             System.out.println("TOTAL RESOLVIDOS: ");
-            System.out.println(" ");
             resolvidosIndividual = sc2.nextInt();
-            System.out.println("TOTAL CERTIFICADOS: ");
             System.out.println(" ");
+            System.out.println("TOTAL CERTIFICADOS: ");
             certificadosIndividual = sc2.nextInt();
             System.out.println(" ");
 
@@ -108,8 +121,11 @@ public class Main {
             chamadosResolvidos[i] = resolvidosIndividual;
             chamadosCertificados[i] = certificadosIndividual;
 
-            percentual [i] = (double) certificadosIndividual / resolvidosIndividual;
-            System.out.println("A porcentagem é: "+percentual[i]);
+            double percentual1 = (double) certificadosIndividual / resolvidosIndividual;
+            double percentualCalc = percentual1 * 100;
+            percentual[i] = percentualCalc;
+            double percentualConvert = percentual[i];
+            System.out.println(String.format("A porcentagem é: %.2f%%",percentualConvert));
 
         }
         String [] equipe = {"Suporte - Gerencial", "Suporte - Integração" , "Suporte - Plataforma" , "Suporte - SAP"};
@@ -124,17 +140,19 @@ public class Main {
 
              System.out.println("EQUIPE: "+equipe[i]);
              System.out.println("TOTAL RESOLVIDOS: ");
-             System.out.println(" ");
              resolvidosEquipeVar = sc2.nextInt();
-             System.out.println("TOTAL CERTIFICADOS: ");
              System.out.println(" ");
+             System.out.println("TOTAL CERTIFICADOS: ");
              certificadosEquipeVar = sc2.nextInt();
-
+             System.out.println(" ");
              resolvidosEquipe[i] = resolvidosEquipeVar;
              certificadosEquipe[i] = certificadosEquipeVar;
 
-             percentualEquipe [i] = (double) certificadosEquipeVar / resolvidosEquipeVar;
-             System.out.println("A porcentagem é: "+percentualEquipe[i]);
+              double percentualEquipe1 = (double) certificadosEquipeVar / resolvidosEquipeVar;
+              double percentualCalc = percentualEquipe1 * 100;
+              percentualEquipe[i] = percentualCalc;
+             double percentualEquipeConvert = percentualEquipe[i];
+             System.out.println(String.format("A porcentagem é: %.2f%%",percentualEquipeConvert));
 
 
 
