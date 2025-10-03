@@ -1,6 +1,5 @@
-import java.text.DecimalFormat;
 import java.util.Scanner;
-public class indicesTotaisAnualMensal {
+public class indicesPesquisaTotal {
     public void indicadoresEquipe(){
         Scanner sc = new Scanner(System.in);
         String [] nomeMeses = {
@@ -57,26 +56,42 @@ public class indicesTotaisAnualMensal {
         int mesAtual = nomeMeses.length - 1;
         int mesAnterior = mesAtual - 1;
 
-        System.out.println("\n === RESULTADOS===\n");
+        System.out.println("\n === PESQUISA DE SATISFAÇÃO ===\n");
 
-        System.out.println("|---INDICADORES ANUAIS---|\n");
+        System.out.println("|------------------------|");
+        System.out.println("|   INDICADORES ANUAIS   |");
+        System.out.println("|------------------------|");
+        System.out.println(" ");
+        System.out.println("|---------------------------------------------------------------|");
         double variacaoTotalAnual = ((totalMensal[mesAtual] - mediaAnual) / mediaAnual) * 100;
-        System.out.println(String.format("A variação anual total foi de: %.2f%%", variacaoTotalAnual));
+        System.out.println(String.format("|A variação anual total foi de: %.2f%%", variacaoTotalAnual));
+        System.out.println("|---------------------------------------------------------------|");
 
         double variacaoAnualOtimasBoas = ((otimasBoas[mesAtual] - mediaOtimasBoas)/mediaOtimasBoas)*100;
-        System.out.println(String.format("A variação anual de avaliações ótimas e boas foi de: %.2f%%",variacaoAnualOtimasBoas));
+        System.out.println(String.format("|A variação anual de avaliações ótimas e boas foi de: %.2f%%",variacaoAnualOtimasBoas));
+        System.out.println("|---------------------------------------------------------------|");
 
         double variacaoAnualOPessimasRuins = ((pessimasRuins[mesAtual] - mediaPessimasRuins)/mediaPessimasRuins)*100;
-        System.out.println(String.format("A variação anual de avaliações péssimas e ruins foi de: %.2f%%", variacaoAnualOPessimasRuins));
+        System.out.println(String.format("|A variação anual de avaliações péssimas e ruins foi de: %.2f%%", variacaoAnualOPessimasRuins));
+        System.out.println("|---------------------------------------------------------------|\n");
 
-        System.out.println("|---INDICADORES MENSAIS---|\n");
+        System.out.println("|--------------------------|");
+        System.out.println("|   INDICADORES MENSAIS    |");
+        System.out.println("|--------------------------|");
+        System.out.println(" ");
         double variacaoMensalTotal = ((double) ( totalMensal[mesAtual] - totalMensal[mesAnterior]) / totalMensal[mesAnterior]) * 100;
-        System.out.println(String.format("A variação mensal no total de avalicações foi de: %.2f%%",variacaoMensalTotal));
+        System.out.println("|---------------------------------------------------------------|");
+        System.out.println(String.format("|A variação mensal no total de avalicações foi de: %.2f%%",variacaoMensalTotal));
+        System.out.println("|---------------------------------------------------------------|");
 
+        System.out.println("|---------------------------------------------------------------|");
         double variacaoMensalOtimasBoas = ((double) ( otimasBoas[mesAtual] - otimasBoas[mesAnterior]) / otimasBoas[mesAnterior]) * 100;
-        System.out.println(String.format("A variação mensal de avaliações ótimas e boas foi de: %.2f%%",variacaoMensalOtimasBoas));
+        System.out.println(String.format("|A variação mensal de avaliações ótimas e boas foi de: %.2f%%",variacaoMensalOtimasBoas));
+        System.out.println("|---------------------------------------------------------------|");
 
+        System.out.println("|---------------------------------------------------------------|");
         double variacaoMensalPessimasRuins = ((double) ( pessimasRuins[mesAtual] - pessimasRuins[mesAnterior]) / pessimasRuins[mesAnterior]) * 100;
-        System.out.println(String.format("A variação mensal de avaliações péssimas e ruins foi de: %.2f%%",variacaoMensalOtimasBoas));
+        System.out.println(String.format("|A variação mensal de avaliações péssimas e ruins foi de: %.2f%%",variacaoMensalOtimasBoas));
+        System.out.println("|---------------------------------------------------------------|");
     }
 }
