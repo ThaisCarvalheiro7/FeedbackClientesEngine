@@ -5,16 +5,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String [] nomeMeses = {
-                "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto"
-        };
-        String [] equipes = {
-                "Suporte Gerencial", "Suporte Integração", "Suporte Plataforma", "Suporte SAP"
-        };
-        int[] totalMensal = new int [8];
-        int[] otimasBoas = new int [8];
-        int[] pessimasRuins = new int[8];
         int escolha = 0;
+        indicadoresIndividuais indicesIndividuais = new indicadoresIndividuais();
+        indicesTotaisAnualMensal indicesTotais = new indicesTotaisAnualMensal();
 
         System.out.println("===CALCULADORA DE INDICADORES====\n");
         System.out.println("--------MENU--------");
@@ -27,9 +20,87 @@ public class Main {
 
         switch (escolha){
             case 1:
+            indicesTotais.indicadoresEquipe();
+
+            case 2:
+                indicesIndividuais.indicadoresAnalista();
+        }
+
+
+        Scanner sc2 = new Scanner(System.in);
+        int [] chamadosResolvidos = new int [39];
+        int [] chamadosCertificados = new int[39];
+        String[] nomes = new String[39];
+        double percentual [] = new double[39];
+        int resolvidosIndividual = 0;
+        int certificadosIndividual = 0;
+        String analista;
+
+        for (int i = 0; i < chamadosCertificados.length; i++){
+            System.out.println("====CALCULOS PERCENTUAIS INDIVIDUAIS===\n");
+            System.out.println("ANALISTA: ");
+            analista = sc2.next();
+            System.out.println(" ");
+            System.out.println("TOTAL RESOLVIDOS: ");
+            resolvidosIndividual = sc2.nextInt();
+            System.out.println(" ");
+            System.out.println("TOTAL CERTIFICADOS: ");
+            certificadosIndividual = sc2.nextInt();
+            System.out.println(" ");
+
+
+            chamadosResolvidos[i] = resolvidosIndividual;
+            chamadosCertificados[i] = certificadosIndividual;
+
+            double percentual1 = (double) certificadosIndividual / resolvidosIndividual;
+            double percentualCalc = percentual1 * 100;
+            percentual[i] = percentualCalc;
+            double percentualConvert = percentual[i];
+            System.out.println(String.format("A porcentagem é: %.2f%%",percentualConvert));
+
+        }
+        String [] equipe = {"Suporte - Gerencial", "Suporte - Integração" , "Suporte - Plataforma" , "Suporte - SAP"};
+        int [] resolvidosEquipe = new int[4];
+        int [] certificadosEquipe = new int [4];
+        double [] percentualEquipe =  new double[4];
+        int resolvidosEquipeVar = 0;
+        int certificadosEquipeVar = 0;
+
+         for (int i = 0; i < equipe.length ; i++) {
+             System.out.println("====CALCULOS PERCENTUAIS EQUIPE===\n");
+
+             System.out.println("EQUIPE: "+equipe[i]);
+             System.out.println("TOTAL RESOLVIDOS: ");
+             resolvidosEquipeVar = sc2.nextInt();
+             System.out.println(" ");
+             System.out.println("TOTAL CERTIFICADOS: ");
+             certificadosEquipeVar = sc2.nextInt();
+             System.out.println(" ");
+             resolvidosEquipe[i] = resolvidosEquipeVar;
+             certificadosEquipe[i] = certificadosEquipeVar;
+
+              double percentualEquipe1 = (double) certificadosEquipeVar / resolvidosEquipeVar;
+              double percentualCalc = percentualEquipe1 * 100;
+              percentualEquipe[i] = percentualCalc;
+             double percentualEquipeConvert = percentualEquipe[i];
+             System.out.println(String.format("A porcentagem é: %.2f%%",percentualEquipeConvert));
+
+
 
         }
 
+    }
+    void InicieIndicador(){
+        Scanner sc = new Scanner(System.in);
+        String [] nomeMeses = {
+                "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto"
+        };
+        String [] equipes = {
+                "Suporte Gerencial", "Suporte Integração", "Suporte Plataforma", "Suporte SAP"
+        };
+        int[] totalMensal = new int [8];
+        int[] otimasBoas = new int [8];
+        int[] pessimasRuins = new int[8];
         for (int i = 0; i < nomeMeses.length; i++){
             System.out.println("==="+nomeMeses[i]+"===");
             System.out.println("Digite o valor de avaliações 'ÓTIMAS': ");
@@ -94,69 +165,6 @@ public class Main {
 
         double variacaoMensalPessimasRuins = ((double) ( pessimasRuins[mesAtual] - pessimasRuins[mesAnterior]) / pessimasRuins[mesAnterior]) * 100;
         System.out.println(String.format("A variação mensal de avaliações péssimas e ruins foi de: %.2f%%",variacaoMensalOtimasBoas));
-
-
-        Scanner sc2 = new Scanner(System.in);
-        int [] chamadosResolvidos = new int [39];
-        int [] chamadosCertificados = new int[39];
-        String[] nomes = new String[39];
-        double percentual [] = new double[39];
-        int resolvidosIndividual = 0;
-        int certificadosIndividual = 0;
-        String analista;
-
-        for (int i = 0; i < chamadosCertificados.length; i++){
-            System.out.println("====CALCULOS PERCENTUAIS INDIVIDUAIS===\n");
-            System.out.println("ANALISTA: ");
-            analista = sc2.next();
-            System.out.println(" ");
-            System.out.println("TOTAL RESOLVIDOS: ");
-            resolvidosIndividual = sc2.nextInt();
-            System.out.println(" ");
-            System.out.println("TOTAL CERTIFICADOS: ");
-            certificadosIndividual = sc2.nextInt();
-            System.out.println(" ");
-
-
-            chamadosResolvidos[i] = resolvidosIndividual;
-            chamadosCertificados[i] = certificadosIndividual;
-
-            double percentual1 = (double) certificadosIndividual / resolvidosIndividual;
-            double percentualCalc = percentual1 * 100;
-            percentual[i] = percentualCalc;
-            double percentualConvert = percentual[i];
-            System.out.println(String.format("A porcentagem é: %.2f%%",percentualConvert));
-
-        }
-        String [] equipe = {"Suporte - Gerencial", "Suporte - Integração" , "Suporte - Plataforma" , "Suporte - SAP"};
-        int [] resolvidosEquipe = new int[4];
-        int [] certificadosEquipe = new int [4];
-        double [] percentualEquipe =  new double[4];
-        int resolvidosEquipeVar = 0;
-        int certificadosEquipeVar = 0;
-
-         for (int i = 0; i < equipe.length ; i++) {
-             System.out.println("====CALCULOS PERCENTUAIS EQUIPE===\n");
-
-             System.out.println("EQUIPE: "+equipe[i]);
-             System.out.println("TOTAL RESOLVIDOS: ");
-             resolvidosEquipeVar = sc2.nextInt();
-             System.out.println(" ");
-             System.out.println("TOTAL CERTIFICADOS: ");
-             certificadosEquipeVar = sc2.nextInt();
-             System.out.println(" ");
-             resolvidosEquipe[i] = resolvidosEquipeVar;
-             certificadosEquipe[i] = certificadosEquipeVar;
-
-              double percentualEquipe1 = (double) certificadosEquipeVar / resolvidosEquipeVar;
-              double percentualCalc = percentualEquipe1 * 100;
-              percentualEquipe[i] = percentualCalc;
-             double percentualEquipeConvert = percentualEquipe[i];
-             System.out.println(String.format("A porcentagem é: %.2f%%",percentualEquipeConvert));
-
-
-
-        }
 
     }
 
