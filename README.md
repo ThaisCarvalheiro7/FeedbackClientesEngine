@@ -1,31 +1,29 @@
-PT-BR:
-Este projeto em Java foi desenvolvido para automatizar o cálculo dos indicadores de satisfação dos clientes com base em avaliações mensais.
-Ele permite inserir os dados mês a mês e obter relatórios sobre o total de respostas, além de calcular índices anuais e mensais.
-Funcionalidades:
- - Entrada de dados mensais de satisfação (ótimas, boas, neutras, ruins, péssimas).
+📊 Esse projeto calcula os indicadores de desempenho das equipes do suporte de TI.
+<br>
+<br>
+⭐ Objetivos: 
+<br>
+* Automatizar uma tarefa no meu dia, tornando ela mais automática, rápida e reduzindo as chances de cálculos errado,
+  tornar os índices de cada equipe e índividuo mais preciso.
+  <br>
+  <br>
+🪄Funcionalidades:
+- Recebimento do número de avaliações
 
- - Cálculo do total de avaliações por mês.
+- Associação automática entre o número digitado na avalição e o mês que ela pertence
+  
+- Cálculo do desempenho de todas as equipes e inviduais
 
- - Menu de opções para consultar indicadores:
+ - Exibição dos resultados no console
+      
+- Resultado no formato de duas casas decimais
+  <br>
+  <br>
+       💻 Tecnologias:
+  <br>
+- Linguagem de programação: Java
+        <br>
+- Controle de laços (for/while): para repetição de tarefas, exibição da vez de cada mês.
+- Arrays: Para armazenamento de dados, para o for percorrer e saber qual mês está na vez de exibição.
+  
 
- - Quantidade total de respostas anual e mensal.
-
- - Índices de avaliações positivas (ótimas/boas).
-
- - Índices de avaliações negativas (ruins/péssimas).
-
-EN:
-This Java project was developed to automate the calculation of customer satisfaction indicators based on monthly reviews.
-It allows you to enter data month by month and obtain reports on the total number of responses, as well as calculate annual and monthly rates.
-Features:
-- Input monthly satisfaction data (excellent, good, neutral, bad, terrible).
-
-- Calculation of the total number of reviews per month.
-
-- Options menu for viewing indicators:
-
-- Total number of annual and monthly responses.
-
-- Positive review rates (excellent/good).
-
-- Negative review rates (bad/terrible).
