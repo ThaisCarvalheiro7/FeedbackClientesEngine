@@ -33,8 +33,6 @@ public class percentualCertificadosEquipe {
             double percentualEquipeConvert = percentualEquipe[i];
             System.out.println(String.format("A porcentagem é: %.2f%%",percentualEquipeConvert));
 
-
-
         }
     }
 

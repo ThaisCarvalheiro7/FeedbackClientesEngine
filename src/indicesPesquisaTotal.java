@@ -56,8 +56,13 @@ public class indicesPesquisaTotal {
         int mesAtual = nomeMeses.length - 1;
         int mesAnterior = mesAtual - 1;
 
-        System.out.println("\n === PESQUISA DE SATISFAÇÃO ===\n");
+        mensagemFinal( totalMensal, mesAtual, mediaOtimasBoas,  mediaPessimasRuins,  mediaAnual,  otimasBoas,
+       pessimasRuins, mesAnterior);
+    }
 
+    public void mensagemFinal(int [] totalMensal, int mesAtual, double mediaOtimasBoas, double mediaPessimasRuins, double mediaAnual, int [] otimasBoas,
+                              int [] pessimasRuins, int mesAnterior){
+        System.out.println("\n === PESQUISA DE SATISFAÇÃO ===\n");
         System.out.println("|------------------------|");
         System.out.println("|   INDICADORES ANUAIS   |");
         System.out.println("|------------------------|");
@@ -93,5 +98,6 @@ public class indicesPesquisaTotal {
         double variacaoMensalPessimasRuins = ((double) ( pessimasRuins[mesAtual] - pessimasRuins[mesAnterior]) / pessimasRuins[mesAnterior]) * 100;
         System.out.println(String.format("|A variação mensal de avaliações péssimas e ruins foi de: %.2f%%",variacaoMensalOtimasBoas));
         System.out.println("|---------------------------------------------------------------|");
+
     }
 }
