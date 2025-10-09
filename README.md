@@ -25,5 +25,8 @@
         <br>
 - Controle de laços (for/while): para repetição de tarefas, exibição da vez de cada mês.
 - Arrays: Para armazenamento de dados, para o for percorrer e saber qual mês está na vez de exibição.
+- Métodos: Utilização de conceitos POO para utilização de métodos que tornem o código mais limpo e eficiente.
+- Scanner: Para permitir que o usuário digite os valores
+- DecimalFormat: Para que as mensagens sejam padronizadas com 2 cadas decimais apenas
   
 
