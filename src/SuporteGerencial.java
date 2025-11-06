@@ -23,7 +23,9 @@ public class SuporteGerencial {
 
     private int otimasBoasAtual;
     private int pessimasRuinsAtual;
-
+    {
+        System.out.println("---  SUPORTE GERENCIAL ---");
+    }
 
     public void entradaDados() {
         System.out.println("Digite a quantidade de avaliações ótimas esse mês: ");

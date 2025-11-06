@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
-public class SuporteIntegracao {
+public class SuportePlataforma {
 
     Scanner sc = new Scanner(System.in);
 
     private double[] qntdTotalRepostas = new double[]{103, 98, 105, 118, 152, 100, 133, 136, 187};
-
 
     private int[] otimasBoasTotal = new int[]{90, 87, 99, 110, 149, 97, 127, 127, 180};
     private int[] pessimasRuinsTotal = new int[]{2, 0, 2, 1, 1, 1, 0, 5, 3};
@@ -26,9 +25,8 @@ public class SuporteIntegracao {
     private int pessimasRuinsAtual;
 
     {
-        System.out.println("--- SUPORTE INTEGRAÇÃO ---");
+        System.out.println("--- SUPORTE PLATAFORMA ---");
     }
-
     public void entradaDados() {
         System.out.println("Digite a quantidade de avaliações ótimas esse mês: ");
         int otima = sc.nextInt();
