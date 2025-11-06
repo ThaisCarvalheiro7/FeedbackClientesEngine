@@ -4,42 +4,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        SuporteGerencial gerencial = new SuporteGerencial();
+        System.out.println("--- SUPORTE GERENCIAL ---");
+        gerencial.entradaDados();
+        gerencial.mediaTotalAnual();
+        gerencial.mediaAnualAvaliacoesBoas();
+        gerencial.mediaAnualPessimas();
 
-        int escolha = 0;
-        indicadoresIndividuais indicesIndividuais = new indicadoresIndividuais();
-        indicesPesquisaTotal indicesTotais = new indicesPesquisaTotal();
-        percentualCertificadosEquipe percentualEquipe = new percentualCertificadosEquipe();
+        gerencial.percentualTotalAnual();
+        gerencial.percentualAnualAvaliacoesBoas();
+        gerencial.percentualAnualPessimas();
 
-        System.out.println("===CALCULADORA DE INDICADORES====\n");
-        System.out.println("|--------------------|");
-        System.out.println("|       MENU         |");
-        System.out.println("|--------------------|\n");
-        System.out.println("1 - Pesquisa de satisfação equipe\n");
-        System.out.println("2 - Pesquisa de satisfação individual\n");
-        System.out.println("3 - Relação chamados resolvidos e certificados (Equipe)\n");
+        gerencial.percentualMensalTotal();
+        gerencial.percentualMensalAvaliacoesBoas();
+        gerencial.percentualMensalAvaliacoesRuins();
 
+        gerencial.relatorioIndicesAnuais();
+        gerencial.relatorioIndicesMensais();
 
-do {
-    System.out.println("Digite o indicador que deseja calcular: ");
-    if(sc.hasNextInt()){
-        escolha = sc.nextInt();
-    } else {
-        System.out.println("Digite apenas números!");
-        sc.next();
-    }
-    if (escolha < 0 || escolha > 4){
-        System.out.println("Escolha inválida!");
-    }
-    switch (escolha) {
-        case 1:
-            indicesTotais.indicadoresEquipe();
-
-        case 2:
-            indicesIndividuais.indicadoresAnalista();
-        case 3:
-            percentualEquipe.percentualEquipeCertificados();
-    }
-}while (true);
 
     }
 }
