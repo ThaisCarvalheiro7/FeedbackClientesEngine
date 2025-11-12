@@ -24,10 +24,8 @@ public class SuportePlataforma {
     private int otimasBoasAtual;
     private int pessimasRuinsAtual;
 
-    {
-        System.out.println("--- SUPORTE PLATAFORMA ---");
-    }
     public void entradaDados() {
+        System.out.println("--- SUPORTE PLATAFORMA ----");
         System.out.println("Digite a quantidade de avaliações ótimas esse mês: ");
         int otima = sc.nextInt();
         System.out.println("Digite a quantidade de avaliações boas esse mês: ");
@@ -42,6 +40,24 @@ public class SuportePlataforma {
         totalMes = otima + boas + neutras + ruins + pessimas;
         otimasBoasAtual = otima + boas;
         pessimasRuinsAtual = ruins + pessimas;
+    }
+
+    public void executarPlataforma() {
+        entradaDados();
+        mediaTotalAnual();
+        mediaAnualAvaliacoesBoas();
+        mediaAnualPessimas();
+
+        percentualTotalAnual();
+        percentualAnualAvaliacoesBoas();
+        percentualAnualPessimas();
+
+        percentualMensalTotal();
+        percentualMensalAvaliacoesBoas();
+        percentualMensalAvaliacoesRuins();
+
+        relatorioIndicesAnuais();
+        relatorioIndicesMensais();
     }
 
     public void mediaTotalAnual() {

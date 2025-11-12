@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class SuporteSAP {
     Scanner sc = new Scanner(System.in);
-
     private double[] qntdTotalRepostas = new double[]{103, 98, 105, 118, 152, 100, 133, 136, 187};
 
     private int[] otimasBoasTotal = new int[]{90, 87, 99, 110, 149, 97, 127, 127, 180};
@@ -23,10 +22,8 @@ public class SuporteSAP {
     private int otimasBoasAtual;
     private int pessimasRuinsAtual;
 
-    {
-        System.out.println("--- SUPORTE SAP ---");
-    }
     public void entradaDados() {
+        System.out.println("--- SUPORTE SAP ----");
         System.out.println("Digite a quantidade de avaliações ótimas esse mês: ");
         int otima = sc.nextInt();
         System.out.println("Digite a quantidade de avaliações boas esse mês: ");
@@ -41,6 +38,25 @@ public class SuporteSAP {
         totalMes = otima + boas + neutras + ruins + pessimas;
         otimasBoasAtual = otima + boas;
         pessimasRuinsAtual = ruins + pessimas;
+    }
+
+    public void executarSAP() {
+        entradaDados();
+        mediaTotalAnual();
+        mediaAnualAvaliacoesBoas();
+        mediaAnualPessimas();
+
+        percentualTotalAnual();
+        percentualAnualAvaliacoesBoas();
+        percentualAnualPessimas();
+
+        percentualMensalTotal();
+        percentualMensalAvaliacoesBoas();
+        percentualMensalAvaliacoesRuins();
+
+        relatorioIndicesAnuais();
+        relatorioIndicesMensais();
+
     }
 
     public void mediaTotalAnual() {

@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class SuporteGerencial {
     Scanner sc = new Scanner(System.in);
-
     private double[] qntdTotalRepostas = new double[]{103, 98, 105, 118, 152, 100, 133, 136, 187};
 
 
@@ -23,11 +22,9 @@ public class SuporteGerencial {
 
     private int otimasBoasAtual;
     private int pessimasRuinsAtual;
-    {
-        System.out.println("---  SUPORTE GERENCIAL ---");
-    }
 
     public void entradaDados() {
+        System.out.println("--- SUPORTE GERENCIAL ----");
         System.out.println("Digite a quantidade de avaliações ótimas esse mês: ");
         int otima = sc.nextInt();
         System.out.println("Digite a quantidade de avaliações boas esse mês: ");
@@ -118,6 +115,25 @@ public class SuporteGerencial {
         System.out.println("A variação mensal no total de respostas boas ou ótimas foi: " + variacaoMensalOtimasBoas);
         System.out.println("A variação mensal no total de respostas péssimas ou ruins foi: " + variacaoMensalPessimasRuins);
     }
+
+    public void executarGerencial() {
+        entradaDados();
+        mediaTotalAnual();
+        mediaAnualAvaliacoesBoas();
+        mediaAnualPessimas();
+
+        percentualTotalAnual();
+        percentualAnualAvaliacoesBoas();
+        percentualAnualPessimas();
+
+        percentualMensalTotal();
+        percentualMensalAvaliacoesBoas();
+        percentualMensalAvaliacoesRuins();
+
+        relatorioIndicesAnuais();
+        relatorioIndicesMensais();
+    }
+
 
     public double getVariacaoAnualTotal() {
         return variacaoAnualTotal;
